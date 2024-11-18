@@ -1,0 +1,38 @@
+-- Brix Hub
+
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/OrionUI/Orion/main/Orion.lua"))()
+local Window = OrionLib:MakeWindow({Name = "Brix's BloxFruits Hub lol", HidePremium = true})
+
+-- WalkSpeed Changer
+local SpeedTab = Window:MakeTab({
+    Name = "WalkSpeed",
+    Icon = "rbxassetid://6023426915",
+    PremiumOnly = false
+})
+
+SpeedTab:AddSlider({
+    Name = "WalkSpeed",
+    Min = 16,
+    Max = 500,
+    Default = 16,
+    Increment = 1,
+    ValueName = "Speed",
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end
+})
+
+-- Auto Farm
+local AutoFarmTab = Window:MakeTab({
+    Name = "Auto Farm",
+    Icon = "rbxassetid://6023426915",
+    PremiumOnly = false
+})
+
+AutoFarmTab:AddButton({
+    Name = "Start Auto Farm",
+    Callback = function()
+        -- Add your auto-farm logic here
+        print("Auto Farm Started!")
+    end
+})
